@@ -223,7 +223,6 @@ async function updateDashboardCounts() {
     visibleIssuesCount.innerHTML = extentCount;
 }
 
-// Watch when map is stationary to update the extent count
 reactiveUtils.watch(
     () => mapView.stationary,
     async (isStationary) => {
