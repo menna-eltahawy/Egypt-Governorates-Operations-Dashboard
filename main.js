@@ -232,7 +232,6 @@ reactiveUtils.watch(
     }
 );
 
-// Watch for successful layer edits to update counts
 operationalIssuesLayer.on("edits", () => {
     updateDashboardCounts();
 });
