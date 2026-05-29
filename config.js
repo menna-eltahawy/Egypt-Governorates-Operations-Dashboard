@@ -1,0 +1,5 @@
+export const API_KEY = "AAPTa7crGgOBFL4SaOUn1IF5zNQ..8in4e63Nha30pLcR99iC9sYGfeuhtLC4XgFABZBmNXeJQFFQeFhCJShqJpW0Z0ZFQ8r4zqlKhdZnzrQgFahhVfv6BI5HNEbjhbAqeiMneDW0C6m2tOYuynMWb896lDkfIkq8I792aAvYaiiscm0_nLlrZE3wwkN4f1a0umxYRZq38NUXcGeBmAebL8C58tSz_Oy_D1KWO59-yyZN1ZTHW0EqiAyxv11mG4FKCGzedwuct0Sk6i-9w5-A3EMPAfcDGYFh-oBhG2Gc0aGOUpoUjA..AT1_sv65FCT3";
+
+export const GOV_URL = "https://services3.arcgis.com/esL3neSvM1XzX1q8/arcgis/rest/services/Egypt_Gov/FeatureServer/0";
+
+export const ISSUES_URL = "https://services3.arcgis.com/esL3neSvM1XzX1q8/arcgis/rest/services/Operational_Issues/FeatureServer/0";

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Egypt Governorates Operations Dashboard</title>
+
+    <script type="module" src="https://js.arcgis.com/5.0/"></script>
+    <link rel="stylesheet" href="https://js.arcgis.com/5.0.0/esri/themes/light/main.css" />
+
+    <script type="module" src="https://js.arcgis.com/calcite-components/3.0.3/calcite.esm.js"></script>
+    <link rel="stylesheet" href="https://js.arcgis.com/calcite-components/3.0.3/calcite.css" />
+
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <calcite-shell content-behind>
+        <calcite-navigation slot="header">
+            <calcite-navigation-logo heading-level="1" slot="logo" heading="Operations Dashboard"
+                description="Egypt Governorates"></calcite-navigation-logo>
+        </calcite-navigation>
+
+        <calcite-shell-panel slot="panel-start" width-scale="m">
+            
+            <calcite-panel heading="Dashboard" id="dashboardPanel">
+                <div class="sidebar-content">
+                    <calcite-notice open icon="graph-bar">
+                        <div slot="title">Total Reported Issues</div>
+                        <div slot="message" id="totalIssuesCount">0</div>
+                    </calcite-notice>
+                    <calcite-notice open icon="view-visible">
+                        <div slot="title">Issues in Visible Extent</div>
+                        <div slot="message" id="visibleIssuesCount">0</div>
+                    </calcite-notice>
+                </div>
+            </calcite-panel>
+
+            <calcite-panel heading="Filter Issues">
+                <div class="sidebar-content">
+                    <calcite-label>
+                        Filter by Issue Type
+                        <calcite-select id="issueFilter">
+                            <calcite-option value="All">All Issues</calcite-option>
+                            <calcite-option value="Violating Building">Violating Building</calcite-option>
+                            <calcite-option value="Street Issue">Street Issue</calcite-option>
+                        </calcite-select>
+                    </calcite-label>
+                </div>
+            </calcite-panel>
+
+            <calcite-panel heading="Report Transit Issue">
+                <div class="sidebar-content">
+                    <calcite-label>
+                        Issue Type
+                        <calcite-select id="incidentType">
+                            <calcite-option value="Violating Building">Violating Building</calcite-option>
+                            <calcite-option value="Street Issue">Street Issue</calcite-option>
+                        </calcite-select>
+                    </calcite-label>
+
+                    <calcite-label>
+                        Description
+                        <calcite-input id="incidentDescription" placeholder="Enter details..."></calcite-input>
+                    </calcite-label>
+
+                    <calcite-button id="startReportingBtn" width="full">
+                        Start Reporting Mode
+                    </calcite-button>
+
+                    <calcite-notice open>
+                        <div slot="message" id="output">
+                            Select issue type and start reporting.
+                        </div>
+                    </calcite-notice>
+                </div>
+            </calcite-panel>
+        </calcite-shell-panel>
+
+        <arcgis-map id="viewDiv" basemap="gray-vector" center="30.8,26.8" zoom="6">
+            <arcgis-zoom slot="top-start"></arcgis-zoom>
+            <arcgis-basemap-toggle slot="bottom-start"></arcgis-basemap-toggle>
+            
+            <arcgis-search slot="top-right" id="searchWidget"></arcgis-search>
+            <arcgis-layer-list slot="top-right"></arcgis-layer-list>
+            <arcgis-legend slot="bottom-right"></arcgis-legend>
+        </arcgis-map>
+
+    </calcite-shell>
+
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>
